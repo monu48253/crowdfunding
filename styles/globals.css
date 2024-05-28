@@ -22,3 +22,522 @@
     z-index: 3;
 
 } 
+
+.gradient-text {
+    background: linear-gradient(45deg, #ffffff, #fbc531);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  @keyframes roller {
+    0% {
+      transform: translateY(100%);
+    }
+    100% {
+      transform: translateY(0%);
+    }
+  }
+  
+  .roller-animation {
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    line-height: 1.2;
+    animation: roller 5s infinite;
+  }
+  @keyframes text-shadow-animation {
+    0% {
+      text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #ff00ff, 0 0 25px #ff00ff, 0 0 30px #ff00ff, 0 0 35px #ff00ff;
+    }
+    50% {
+      text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #ff00ff, 0 0 50px #ff00ff, 0 0 60px #ff00ff, 0 0 70px #ff00ff;
+    }  100% {}
+  }
+  
+  
+  .gradient-text {
+    background: linear-gradient(90deg, #ff00ff, #00ffff, #ff00ff);
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradient-animation 3s ease infinite;
+  }
+  
+  @keyframes gradient-animation {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+  /* Add this CSS to your global CSS file or component */
+@keyframes strip-animation {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.animate-strip {
+  animation: strip-animation 10s linear infinite;
+}
+
+
+
+  
+  
+
+  
+  .gradient-text {
+    background: linear-gradient(90deg, #ff00ff, #00ffff, #ff00ff);
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradient-animation 3s ease infinite;
+  }
+  
+  @keyframes gradient-animation {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  
+  
+  .gradient-logo {
+    background: linear-gradient(90deg, #ff00ff, #00ffff, #ff00ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradient-animation 3s ease infinite;
+  }
+  .gradient-logo {
+    fill: url(#gradient);
+    animation: gradient-animation 3s ease infinite, bounce 2s infinite;
+  }
+  
+  .gradient-logo svg {
+    fill: url(#gradient);
+  }
+  /* globals.css */
+
+/* Existing global styles (if any) */
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  /* Remove the background-color property */
+  /* background-color: #f9f9f9; */
+  color: #333;
+}
+
+/* Remove the body::before block */
+/* body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  background: linear-gradient(45deg, rgba(255, 154, 158, 0.8), rgba(250, 208, 196, 0.8), rgba(250, 208, 196, 0.8), rgba(255, 154, 158, 0.8), rgba(255, 236, 210, 0.8), rgba(252, 182, 159, 0.8));
+  background-size: 300% 300%;
+  animation: gradientBackground 15s ease infinite;
+} */
+
+/* Gradient background animation */
+/* @keyframes gradientBackground {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+} */
+
+/* About Us Component Styles */
+
+.about-container {
+  text-align: center;
+  padding: 50px;
+  background-color: rgba(255, 255, 255, 0.9); /* Slightly transparent to show background */
+  backdrop-filter: blur(10px); /* Blur the background behind the content */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-botton:0px;
+}
+
+/* Rest of the styles remain the same */
+/* About Us Component Styles */
+
+.about-container {
+  text-align: center;
+  padding: 100px;
+  background-color: #1a1a1a; /* Black background */
+  color: #fff; /* White text */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  min-height: 600px;
+  margin-bottom: 0;
+}
+
+.questions-container {
+  text-align: left;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.questions-container h2 {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  color: #fff; /* White text */
+}
+
+.question {
+  cursor: pointer;
+  margin-bottom: 10px;
+  padding: 10px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease;
+}
+
+.question:hover {
+  background-color: black;
+}
+
+.question-title {
+  margin: 0;
+  font-size: 1.1em;
+}
+
+.answer {
+  display: none;
+  margin-top: 10px;
+  padding: 10px;
+  background-color: black;
+  border-radius: 5px;
+}
+
+.answer.active {
+  display: block;
+}
+
+.members-section {
+  margin-top: 50px;
+}
+
+.members-section h2 {
+  margin-bottom: 20px;
+  font-size: 2em;
+  color: #fff; /* White text */
+}
+
+.members {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.member {
+  text-align: center;
+  animation: fadeIn 2s ease-in-out;
+}
+
+.member-photo {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+}
+
+.member-photo:hover {
+  transform: scale(1.1);
+}
+
+.member-name {
+  margin-top: 10px;
+  font-size: 1.2em;
+  color: #fff; /* White text */
+}
+
+/* Animations */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.about-container h1 {
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+.question-title,
+.answer {
+  animation: fadeIn 2s ease-in-out;
+}
+
+/* Apply a black background to the entire About Us page */
+.about-container {
+  background-color: #000;
+  color: #fff;
+  min-height: 100vh; /* Ensure the background covers the full viewport height */
+  padding: 50px 20px; /* Add some padding to the container */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Ensure questions and answers have a consistent style */
+.question, .answer {
+  color: #fff;
+}
+
+/* Style for question containers */
+.questions-container h2, .member-name {
+  color: #fff;
+}
+
+/* Ensure member photos are evenly sized and spaced */
+.member-photo {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+}
+
+/* Apply a black background to the body */
+body {
+  background-color: #000;
+  color: #fff; /* Set text color to white */
+}
+
+/* If you have a container that wraps your content, apply the black background to it */
+.container {
+  background-color: #000;
+  color: #fff; /* Set text color to white */
+}
+input[type="text"],
+input[type="date"],
+input[type="number"],
+textarea {
+  color: black; /* Set text color to black */
+}
+
+input[type="text"]::placeholder,
+input[type="date"]::placeholder,
+input[type="number"]::placeholder,
+textarea::placeholder {
+  color: gray; /* Optional: Set placeholder text color */
+}
+.create-campaign-button {
+  background: linear-gradient(90deg, #1e3c72 0%, #2a5298 50%, #1e3c72 100%);
+  color: white;
+  transition: background 0.3s ease;
+  width: auto; /* Change from full width to auto */
+  padding: 0 1.5rem; /* Add some padding to the left and right */
+}
+
+.create-campaign-button:hover {
+  background: linear-gradient(90deg, #2a5298 0%, #1e3c72 50%, #2a5298 100%);
+}
+.card {
+  cursor: pointer;
+  border: none;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.card img {
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+.card:hover img {
+  transform: scale(1.05);
+}
+
+.progress-bar {
+  transition: width 0.3s ease;
+}
+
+.text-animated {
+  position: relative;
+  overflow: hidden;
+}
+
+.text-animated p {
+  position: relative;
+  animation: slide-in 0.5s forwards;
+  opacity: 0;
+}
+
+@keyframes slide-in {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.card-title {
+  font-size: 1.75rem;
+  font-weight: bold;
+  color: #1f2937; /* Custom color */
+}
+
+.card-description {
+  font-size: 1rem;
+  color: #4b5563; /* Custom color */
+}
+
+.target-raised {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #374151; /* Custom color */
+}
+.fade-in {
+  animation: fadeIn 0.3s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.popup-background {
+  transition: opacity 0.3s ease-out;
+}
+
+.popup-card {
+  transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+  transform: translateY(20px);
+  opacity: 0;
+}
+
+.popup-card.show {
+  transform: translateY(0);
+  opacity: 1;
+}
+.popup-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(10px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 50;
+  opacity: 0;
+  transition: opacity 0.3s ease-out;
+}
+
+.popup-card {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(100%);
+  transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+}
+
+.popup-show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.popup-show-overlay {
+  opacity: 1;
+}
+
+.popup-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: black;
+}
+.progress-container {
+  width: 100%;
+  background-color: #e0e0df;
+  border-radius: 50px;
+  margin: 8px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.progress-bar {
+  height: 20px;
+  border-radius: 50px;
+  background: linear-gradient(to right, #ff6b6b, #ff8e53);
+  animation: heartbeat 1.5s ease-in-out infinite;
+}
+
+@keyframes heartbeat {
+  0%,
+  100% {
+    transform: scaleX(1);
+  }
+  25% {
+    transform: scaleX(1.2);
+  }
+  50% {
+    transform: scaleX(1);
+  }
+  75% {
+    transform: scaleX(1.2);
+  }
+}
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-text pre {
+  animation: fadeInUp 0.5s ease-in-out forwards;
+}

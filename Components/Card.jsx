@@ -1,13 +1,17 @@
 import React from "react";
 
 const Card = ({ allcampaign, setOpenModel, setDonate, title }) => {
-   console.log(allcampaign);
-
-
   const daysLeft = (deadline) => {
     const difference = new Date(deadline).getTime() - Date.now();
     const remainingDays = difference / (1000 * 3600 * 24);
     return remainingDays.toFixed(0);
+  };
+
+  const calculateProgressWidth = (amountCollected, target, deadline) => {
+    const totalDays = new Date(deadline).getTime() - new Date().getTime();
+    const progressDays = Math.max(0, totalDays / (1000 * 3600 * 24));
+    const progress = (amountCollected / target) * 100;
+    return Math.min(progress, (100 - progressDays)).toFixed(2);
   };
 
   return (
@@ -24,7 +28,10 @@ const Card = ({ allcampaign, setOpenModel, setDonate, title }) => {
             className="cursor-pointer border overflow-hidden transition-shadow duration-300 bg-white rounded"
           >
             <img
-              src={campaign.image || "https://images.pexels.com/photos/461049/pexels-photo-461049.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"}
+              src={
+                campaign.image ||
+                "https://images.pexels.com/photos/461049/pexels-photo-461049.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+              }
               className="object-cover w-full h-64 rounded"
               alt={campaign.title || "Campaign Image"}
             />
@@ -32,23 +39,39 @@ const Card = ({ allcampaign, setOpenModel, setDonate, title }) => {
               <p className="mb-2 text-xs font-semibold text-gray-600 uppercase">
                 Days Left: {daysLeft(campaign.deadline)}
               </p>
-              <div className="w-full bg-gray-300">
-                   <div className="bg-green-600 text-xs font-medium text-green-100 text-center p-0.5 leading-none rounded-l-full"
-                    style={{width: '70%'}}
-                     ></div></div>
               <a
                 href="/"
                 aria-label="Article"
                 className="inline-block mb-3 text-black transition-colors duration-200 hover:text-deep-purple-accent-700"
               >
-                <p className="text-2xl font-bold leading-5">{campaign.title}</p>
+                <p className="text-2xl font-bold leading-5 text-black">
+                  {campaign.title}
+                </p>
               </a>
-              <p className="mb-4 text-gray-700">{campaign.description}</p>
-              <div className="flex space-x-4">
+              <p className="mb-4 text-gray-700 text-black">{campaign.description}</p>
+              <div className="flex space-x-4 text-black">
                 <p className="font-semibold">Target: {campaign.target} ETH</p>
-                
-                <p className="font-semibold">Raised: {campaign.amountCollected} ETH</p>
+                <p className="font-semibold">
+                  Raised: {campaign.amountCollected} ETH
+                </p>
               </div>
+            </div>
+            <div className="progress-container">
+              <div
+                className="progress-bar"
+                style={{
+                  "--progress-width": `${calculateProgressWidth(
+                    campaign.amountCollected,
+                    campaign.target,
+                    campaign.deadline
+                  )}%`,
+                  width: `${calculateProgressWidth(
+                    campaign.amountCollected,
+                    campaign.target,
+                    campaign.deadline
+                  )}%`,
+                }}
+              ></div>
             </div>
           </div>
         ))}

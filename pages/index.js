@@ -2,6 +2,10 @@ import React, { useEffect, useContext, useState } from "react";
 import { CrowdFundingContext } from "@/Context/CrowdFunding";
 import { Hero, Card, Popup } from "../Components";
 
+
+
+
+
 const Index = () => {
   const {
     titleData,
